@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="col p-2" *ngFor="let blog of blogs; index as i">
+                <h3 style="margin: 0%;">{{blog.blogTitle}}</h3>
+                <b>Catagory: </b>{{blog.blogCatagory}} <br>
+                <b>Description: </b>{{blog.blogShortDesc}} <br>
+                
+                <div class="mt-2">
+                    <button class="btn btn-sm btn-success" (click)="viewBlog(blog._id)">View</button>
+                    <button class="btn btn-sm btn-primary mx-2" (click)="editBlog(blog._id)">Edit</button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteBlog(blog._id)">Delete</button>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <!-- <div class="col-5">
+           <div class="container" style="text-align: center; justify-content: center; display: flex;">
+            Adverisements
+           </div>
+        </div> -->
+    </div>
+    </div>
+    

@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <div class="card p-3">
+        <form [formGroup]="loginForm">
+            <h1 class="text-center" style="font-weight: bold;">Login</h1>
+                    <div class="mt-3 mb-2">
+                        <input formControlName="email" type="email" placeholder="Email" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')">*Enter Valid Email</div>
+                        <div Class="text-danger mt-2" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">*Email is required</div>
+                        <!-- <span *ngIf="loginForm.hasError('required', 'email') && loginForm.controls['email'].dirty" class="text-danger mt-2">*Email is required</span>
+                        <span *ngIf="loginForm.hasError('email', 'email')" class="text-danger mt-2">*Email address invalid</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="password" type="password" placeholder="Password" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">*Password is required</div>
+                        <!-- <span *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].dirty" class="text-danger mt-2">*Password is required</span> -->
+                    </div>
+            
+                    <button [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid" (click)="login()" class="btn btn-primary">Login</button>
+                </form>
+            
+                <div class="mt-2">
+                    <span>Don't have an Account?</span> <a routerLink="/register" class="ml-2 cursor-pointer">Register</a>
+                </div>
+    </div>
+</div>

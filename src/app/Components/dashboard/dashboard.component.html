@@ -1,0 +1,50 @@
+<!-- <div *ngFor="let blog of blogs">
+    {{blog.blogCatagory}}
+</div> -->
+
+<!-- <div class="container d-flex flex-wrap">
+    <div class="card mt-3" *ngFor="let blog of blogs">
+        <div class="card-header">
+           <div class="heading">
+            {{blog.blogTitle}}
+           </div>
+        </div>
+        <div class="card-body">
+          Catagory : {{blog.blogCatagory}} <br>
+          <div [innerHTML]="blog.blogContent">
+           
+        </div>
+           
+        </div>
+        <div class="card-footer">
+           Created At : {{blog.createdAt}} <br>
+            Last Updated :{{blog.updatedAt}}
+        </div>
+
+    </div>
+</div> -->
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col">
+        <div class="col p-2" *ngFor="let blog of blogs; index as i">
+            <b>Title: </b> {{blog.blogTitle}}<br>
+            <b>Catagory: </b>{{blog.blogCatagory}} <br>
+            <b>Description: </b>{{blog.blogShortDesc}} <br>
+            
+            <div class="mt-2">
+                <button class="btn btn-sm btn-success" (click)="viewBlog(blog._id)">View</button>
+                <!-- <button class="btn btn-sm btn-primary mx-2">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteBlog(blog._id)">Delete</button> -->
+            </div>
+            <hr>
+        </div>
+    </div>
+    <!-- <div class="col-5">
+       <div class="container" style="text-align: center; justify-content: center; display: flex;">
+        Adverisements
+       </div>
+    </div> -->
+    
+</div>
+</div>

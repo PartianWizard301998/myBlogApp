@@ -1,0 +1,23 @@
+
+<div class="Container m-5" *ngFor="let blog of blogs">
+   
+  
+    <h1>{{blog.blogTitle}}</h1>
+    <b>Catagory :</b>{{blog.blogCatagory}}
+    <br>
+    <br>
+
+    <p [innerHTML]="blog.blogContent"></p>
+    <hr>
+
+   <div class="row">
+
+        <div class="col-4">
+            {{blog.updatedAt | date}}
+        </div>
+
+        <div class="col-4">
+            {{blog.userName}}
+        </div>
+   </div>
+</div>
