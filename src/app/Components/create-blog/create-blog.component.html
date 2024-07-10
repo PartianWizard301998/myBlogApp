@@ -1,0 +1,28 @@
+<div class="container mt-2 mb-2">
+    <!-- <h3>Write a blog post or copy or paste the content.</h3> -->
+    <h1 style="text-align: center; font-weight: bold; color: blue;">Create Blog</h1>
+    <form [formGroup]="blogForm">
+        
+        <div class="row">
+            <div class="col-6">
+                <input class="form-control" type="text" formControlName="blogTitle" placeholder="blogtitle"> <br>
+
+            </div>
+            <div class="col-6">
+                <input class="form-control" formControlName="blogCatagory" placeholder="blogCatagory"> <br>
+            </div>
+        </div>
+
+        <input class="form-control" type="text" formControlName="blogShortDesc" placeholder="Short Description"> 
+        <!-- <div class="text-danger mt-2" *ngIf="blogForm.get('blogShortDesc')?.touched && blogForm.get('blogShortDesc')?.hasError('required')">*blogTitle is required</div>  -->
+
+
+        <div class="mt-3">
+            <angular-editor formControlName="blogContent" [config]="editorConfig"></angular-editor>
+            <button class="btn btn-sm btn-primary mt-2" (click)="submit()">Add Blog</button>
+        </div>
+
+    </form>
+</div>
+
+

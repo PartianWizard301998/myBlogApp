@@ -1,0 +1,53 @@
+<div class="container mt-3">
+    <div class="card p-3">
+        <form [formGroup]="registerForm">
+            <h1 class="text-center" style="font-weight: bold;">Register</h1>
+                    <div class="mt-3 mb-2">
+                        <input formControlName="firstName" type="text" placeholder="FirstName" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.hasError('required')">*FirstName is required</div>
+                        <!-- <span *ngIf="registerForm.hasError('required', 'firstName') && registerForm.controls['firstName'].dirty" class="text-danger mt-2">*FirstName is required</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="lastName" type="text" placeholder="LastName" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.hasError('required')">*LastName is required</div>
+                        <!-- <span *ngIf="registerForm.hasError('required', 'lastName') && registerForm.controls['lastName'].dirty" class="text-danger mt-2">*LastName is required</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="email" type="email" placeholder="Email" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('email')">*Enter Valid Email</div>
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')">*Email is required</div>
+                        <!-- <span *ngIf="registerForm.hasError('required', 'email') && registerForm.controls['email'].dirty" class="text-danger mt-2">*Email is required</span>
+                        <span *ngIf="registerForm.hasError('email', 'email')" class="text-danger mt-2">*Email address invalid</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="userName" type="text" placeholder="Username" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('userName')?.touched && registerForm.get('userName')?.hasError('required')">*UserName is required</div>
+                        <!-- <span *ngIf="registerForm.hasError('required', 'userName') && registerForm.controls['userName'].dirty" class="text-danger mt-2">*UserName is required</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="password" type="password" placeholder="Password" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')">*Password is required</div>
+                        <!-- <span *ngIf="registerForm.hasError('required', 'password') && registerForm.controls['password'].dirty" class="text-danger mt-2">*Password is required</span> -->
+                    </div>
+            
+                    <div class="mt-3 mb-2">
+                        <input formControlName="confirmpassword" type="password" placeholder="Confirm Password" class="form-control">
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('confirmpassword')?.touched && registerForm.get('confirmpassword')?.hasError('required')">*Password is required</div>
+                        <div Class="text-danger mt-2" *ngIf="registerForm.get('confirmpassword')?.touched && registerForm.get('confirmpassword')?.hasError('confirmPasswordValidator')">*Password did Not matched.</div>
+                        
+                        <!-- <span *ngIf="registerForm.hasError('required', 'confirmpassword') && registerForm.controls['confirmpassword'].dirty" class="text-danger mt-2">*Confirm Password is required</span>  
+                        <span class="text-danger mt-2" *ngIf="registerForm.hasError('confirmPasswordValidator', 'confirmpassword')">*Password didnt matched</span> -->
+                    </div>
+            
+                    <button [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" (click)="register()" class="btn btn-primary">Register</button>
+                </form>
+            
+                <div class="mt-2">
+                    <span>Already have an Account?</span> <a routerLink="/login" class="ml-2 cursor-pointer">Login Here</a>
+                </div>
+    </div>
+</div>
