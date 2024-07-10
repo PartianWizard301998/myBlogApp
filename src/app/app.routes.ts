@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { authGuard } from './Guards/auth.guard';
+import HomeComponent from './Components/home/home.component';
 
 export const routes: Routes = [
-    {path:'', loadComponent: () => import('./Components/home/home.component')},
+    {path:'', component:HomeComponent},
     {path:'login', loadComponent: () => import('./Components/login/login.component')},
     {path:'register', loadComponent: () => import('./Components/register/register.component')},
     {path:'home', loadComponent: () => import('./Components/home/home.component')},
